@@ -15,7 +15,7 @@ def invert(dictionary: dict[str, str]) -> dict[str, str]:
 
 
 def count(old: list[str]) -> dict[str, int]:
-    """Making a dictionary where the key is given in list and value is the number of times it appears."""
+    """Counts the number of time an input in list appears."""
     new_dict: dict[str, int] = {}
     for value in old:
         if value in new_dict:
@@ -42,12 +42,13 @@ def favorite_color(names_colors: dict[str, str]) -> str:
 
 
 def bin_len(words: list[str]) -> dict[int, set[str]]:
-    """Put a list of strings into its length."""
+    """Separate a list of strings into its length."""
 
     new_dict: dict[int, set[str]] = {}
     for value in words:
         length = len(value)
         if length in new_dict:
-            new_dict[key]
-
+            new_dict[length].add(value)
+        else:
+            new_dict[length] = {value}
     return new_dict

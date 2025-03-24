@@ -1,14 +1,14 @@
-"""Implemting unit tests."""
+"""Implementing unit tests."""
 
 __author__: str = "730519187"
 
 import pytest
-from dictionary import invert, count, favorite_color, bin_len
+from exercises.ex03.dictionary import invert, count, favorite_color, bin_len
 
 
 def test_invert() -> None:
     """Test use case for invert."""
-    x: dict[str, str] = {"z": "a", "y": "a", "x": "c"}
+    x: dict[str, str] = {"z": "a", "y": "b", "x": "c"}
     y: dict[str, str] = {"a": "z", "b": "y", "c": "x"}
     assert invert(y) == x
 
@@ -24,6 +24,12 @@ def test_invert_3() -> None:
     """Test edge case."""
     invert_dict: dict[str, str] = {}
     assert invert(invert_dict) == {}
+
+
+def test_invert_4() -> None:
+    """Tests the use case for the function invert."""
+    test: dict[str, str] = {"riya": "gautam"}
+    assert invert(test) == {"gautam": "riya"}
 
 
 def test_count() -> None:
